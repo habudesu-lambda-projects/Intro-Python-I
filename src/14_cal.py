@@ -21,4 +21,15 @@ and does the following:
 
 import sys
 import calendar
-from datetime import datetime
+from datetime import date
+
+month = date.today().month
+year = date.today().year
+
+if len(sys.argv) == 2:
+    month = int(sys.argv[1])
+elif len(sys.argv) == 3:
+    month = int(sys.argv[1])
+    year = int(sys.argv[2])
+
+print(calendar.TextCalendar(firstweekday=6).formatmonth(year, month, 5))
